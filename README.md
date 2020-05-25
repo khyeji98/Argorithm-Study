@@ -36,3 +36,23 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 
 **배열 선언 및 초기화**
 
+```
+// 비어있는 배열 선언
+
+var exmaple: Array<Int> = Array()
+var example: Array<Int> = []
+var example = Array<Int>()
+var example: [Int] = []
+var example = [Int]()
+
+// 배열 선언과 동시에 값넣기
+
+var example = [values]
+var exmaple = Array(values)
+```
+
+**배열 map, filter, reduce**
+
+```
+
+```
