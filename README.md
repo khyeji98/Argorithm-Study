@@ -10,7 +10,6 @@
 ### K번째 수
 
 *Solution 1*
-
 ```
 import Foundation
 
@@ -29,20 +28,23 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 ```
 
 *Solution 2*
+```
 
 ```
+
+*Solution 3*
+```Swift
 import Foundation
 
 func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     
-    return commands.map{let i = $0[0]-1; let j = $0[1]-1; let k = $0[2]-1
-                        return array[i...j].sorted()[k]}
+    return commands.map{let i = $0[0]-1; let j = $0[1]-1; let k = $0[2]-1 // 세미콜론(;) : 한 라인에 여러 명령을 사용하고 싶을 때 사용
+                        return array[i...j].sorted()[k]} // 함수가 단일 명령문이 아니므로 return 생략 불가능
 
-} // 세미콜론(;) : 한 라인에 여러 명령을 사용하고 싶을 때 사용
+} 
 ```
 
 *Study - 배열 선언 및 초기화*
-
 ```
 // 비어있는 배열 선언
 
