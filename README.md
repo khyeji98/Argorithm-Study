@@ -33,3 +33,6 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 ```
 
 ```
+
+**배열 선언 및 초기화**
+
