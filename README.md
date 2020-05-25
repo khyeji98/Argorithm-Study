@@ -34,7 +34,7 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 
 ```
 
-**배열 선언 및 초기화**
+*Study - 배열 선언 및 초기화*
 
 ```
 // 비어있는 배열 선언
@@ -51,7 +51,7 @@ var example = [values]
 var exmaple = Array(values)
 ```
 
-**배열 map, filter, reduce**
+*Study - 배열 map, filter, reduce*
 
 ```
 
