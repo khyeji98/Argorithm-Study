@@ -31,7 +31,14 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 *Solution 2*
 
 ```
+import Foundation
 
+func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+    
+    return commands.map{let i = $0[0]-1; let j = $0[1]-1; let k = $0[2]-1
+                        return array[i...j].sorted()[k]}
+
+} // 세미콜론(;) : 한 라인에 여러 명령을 사용하고 싶을 때 사용
 ```
 
 *Study - 배열 선언 및 초기화*
