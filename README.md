@@ -69,7 +69,7 @@ var example = [values]
 var exmaple = Array(values)
 ```
 
-*Study - map*
+*Study - map*   
 `.map`은 컨테이너의 각각의 값을 매개변수를 받아 함수에 적용시켜 새로운 컨테이너를 생성하는 것.   
 > for-in 구문을 함축시켜 놓은 것과 같다.   
 > 실행 시간이 단축된다.
@@ -109,10 +109,10 @@ func solution(_ numbers:[Int]) -> String {
 ```
 > **앞뒤값을 비교할 수도 있지만 앞뒤값 조합 두가지의 차가 0보다 큰지를 이용해 정렬할 수도 있음**
 
-*Study - reduce*
+*Study - reduce*   
 `.reduce`는 전달받는 연산법으로 각 배열의 모든 값을 combine
 > sort와 map처럼 for-in loop문을 함축시킨 것.   
 > 초기값을 꼭 설정해줘야 함.
 
-*Study - sort VS sorted*
+*Study - sort VS sorted*   
 `.sort`는 원본 배열도 변경되지만, `.sorted`는 정렬된 사본 배열을 반환해주는 것이라는데 본 문제에서 `.sort`를 사용했을 때 왜 에러나는지 아직 모름.
