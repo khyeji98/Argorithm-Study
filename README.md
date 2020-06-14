@@ -155,3 +155,54 @@ func solution(_ numbers:[Int]) -> String {
 
 ### 모의고사
 
+*Error 1*
+```Swift
+import Foundation
+
+func solution(_ answers:[Int]) -> [Int] {
+    
+    let firstAnswer: [Int] = [1, 2, 3, 4, 5]
+    let secondAnswer: [Int] = [2, 1, 2, 3, 2, 4, 2, 5]
+    let thirdAnswer: [Int] = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    
+    var firstScore: Int = 0
+    var secondScore: Int = 0
+    var thirdScore: Int = 0
+    
+    for i in answers {
+        if firstAnswer[(i % firstAnswer.count)] == answers[i] {
+            firstScore += 1
+        }
+        if secondAnswer[(i % secondAnswer.count)] == answers[i] {
+            secondScore += 1
+        }
+        if thirdAnswer[(i % thirdAnswer.count)] == answers[i] {
+            thirdScore += 1
+        }
+    }
+    
+    if firstScore > secondScore {
+        if firstScore > thirdScore {
+            return [1]
+        } else if thirdScore > firstScore {
+            return [3]
+        } else if firstScore == thirdScore {
+            return [1, 3]
+        } else {  return [] }
+    } else if secondScore > firstScore {
+        if secondScore > thirdScore {
+            return [2]
+        } else if secondScore == thirdScore {
+            return [2, 3]
+        } else { return [] }
+    } else if firstScore == secondScore {
+        if firstScore > thirdScore {
+            return [1, 2]
+        } else if firstScore < thirdScore {
+            return [3]
+        } else { return [] }
+    }
+    return []
+}
+```
+> **signal: illegal instruction (core dumped)** 이런 
