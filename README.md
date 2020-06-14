@@ -203,6 +203,5 @@ func solution(_ answers:[Int]) -> [Int] {
         } else { return [] }
     }
     return []
-}
+} // signal: illegal instruction (core dumped)
 ```
-> **signal: illegal instruction (core dumped)** 이런 
