@@ -157,8 +157,6 @@ func solution(_ numbers:[Int]) -> String {
 
 *Error 1*
 ```Swift
-import Foundation
-
 func solution(_ answers:[Int]) -> [Int] {
     
     let firstAnswer: [Int] = [1, 2, 3, 4, 5]
@@ -204,4 +202,30 @@ func solution(_ answers:[Int]) -> [Int] {
     }
     return []
 } // signal: illegal instruction (core dumped)
+```
+
+*Solution 1*
+```Swift
+func solution(_ answers:[Int]) -> [Int] {
+    let answer = (
+        first : [1, 2, 3, 4, 5],
+        second : [2, 1, 2, 3, 2, 4, 2, 5],
+        third : [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    )
+    var result = [1:0, 2:0, 3:0]
+
+    for (index, value) in answers.enumerated() {
+        if answer.first[index % 5] == value {
+            result[1]! += 1
+        }
+        if answer.second[index % 8] == value {
+            result[2]! += 1
+        }
+        if answer.third[index % 10] == value {
+            result[3]! += 1
+        }
+    }
+    
+    return result.sorted{ $0.key > $1.key }.filter{ $0.value == result.values.max() }.map{ $0.key }
+}
 ```
