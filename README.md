@@ -138,14 +138,15 @@ func solution(_ numbers:[Int]) -> String {
 > **앞뒤값을 비교할 수도 있지만 앞뒤값 조합 두가지의 차가 0보다 큰지를 이용해 정렬할 수도 있음**
 
 *Study - reduce*
-
 `.reduce`는 전달받는 연산법으로 각 배열의 모든 값을 combine
 > sort와 map처럼 for-in loop문을 함축시킨 것.   
 > 초기값을 꼭 설정해줘야 함.
 
 *Study - sort VS sorted*
-
 `.sort`는 원본 배열도 변경되지만, `.sorted`는 정렬된 사본 배열을 반환해주는 것이라는데 본 문제에서 `.sort`를 사용했을 때 왜 에러나는지 아직 모름.
+
+*Study - hasPrefix*
+`.hasPrefix`는 String의 첫번째 문자가 특정 문자인지 Bool 값으로 확인함
 
 ## 완전탐색
 
