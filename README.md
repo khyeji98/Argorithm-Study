@@ -44,8 +44,6 @@
 
 *Solution 1*
 ```Swift
-import Foundation
-
 func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     
     var answer = [Int]()
@@ -62,8 +60,6 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 
 *Solution 2*
 ```Swift
-import Foundation
-
 func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     
     return commands.map({key in array[(key[0]-1...key[1]-1)].sorted()[key[2]-1]})
@@ -74,8 +70,6 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 
 *Solution 3*
 ```Swift
-import Foundation
-
 func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     
     return commands.map{let i = $0[0]-1; let j = $0[1]-1; let k = $0[2]-1 // 세미콜론(;) : 한 라인에 여러 명령을 사용하고 싶을 때 사용
@@ -87,7 +81,6 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
 *Study - 배열 선언 및 초기화*
 ```Swift
 // 비어있는 배열 선언
-
 var exmaple: Array<Int> = Array()
 var example: Array<Int> = []
 var example = Array<Int>()
@@ -95,24 +88,30 @@ var example: [Int] = []
 var example = [Int]()
 
 // 배열 선언과 동시에 값넣기
-
 var example = [values]
 var exmaple = Array(values)
 ```
 
 *Study - map*
-
 `.map`은 컨테이너의 각각의 값을 매개변수를 받아 함수에 적용시켜 새로운 컨테이너를 생성하는 것.   
 > for-in 구문을 함축시켜 놓은 것과 같다.   
 > 실행 시간이 단축된다.
 
 ### 가장큰수
 : 처음엔 자릿수마다의 조건문을 만들어야하나 생각하다가 다른 솔루션을 보고 이해하는 방식으로 공부함
-
 *Solution 1*
 ```Swift
-import Foundation
+func solution(_ numbers:[Int]) -> String {
 
+    var sortedNum = numbers.sorted{Int("\($0)\($1)")! > Int("\($1)\($0)")!} // 1. 가장 큰 수 찾기
+    
+    let answer = sortedNum.map{String($0)}.reduce(""){$0 + $1} // 2. 가장 큰 수를 String으로 조합
+    
+    return answer.hasPrefix("0") == true ? "0" : answer // 3. 결과가 0인지 확인
+}
+```
+*Solution 2*
+```Swift
 func solution(_ numbers:[Int]) -> String {
     
     let sortedNumbers = numbers.sorted { Int("\($0)\($1)")! > Int("\($1)\($0)")! } // 옵셔널 강제추출안하면 에러!
@@ -125,11 +124,8 @@ func solution(_ numbers:[Int]) -> String {
     return sortedNumbers.reduce("") { "\($0)" + "\($1)" } // ""은 초기값이므로 반드시 명시해야 함
 }
 ```
-
-*Solution 2*
+*Solution 3*
 ```Swift
-import Foundation
-
 func solution(_ numbers:[Int]) -> String {
     
     let sortedNumbers = numbers.sorted { Int("\($0)\($1)")! > Int("\($1)\($0)")! } 
